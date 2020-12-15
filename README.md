@@ -70,11 +70,11 @@ selector: 'app-test',
 template: `
     <div>
         <h1>{{ title_name }}</h1>
-        <input [id]="myId" type='text' /> <!-- Property binding, it works with numbers, booleans(true/false), changing values -->
-        <input id="{{ myId }}" type='text' /> <!-- Interpolation, only works with string values and it's not changing if already have a value -->
-        <input disabled="{{ myStatus }}" type='text' /> <!-- Interpolation, This will work one time, but the value will not change forever -->
-        <input [disabled]="myStatus" type='text' /> <!-- Property binding using [] on the attribute "disabled" -->
-        <input bind-disabled="myStatus" type='text' /> <!-- Property binding using "bind-" on the attribute "disabled"-->
+        <input [id]="myId" type='text' />                   <!-- Property binding, it works with numbers, booleans(true/false), changing values -->
+        <input id="{{ myId }}" type='text' />               <!-- Interpolation, only works with string values and it's not changing if already have a value -->
+        <input disabled="{{ myStatus }}" type='text' />     <!-- Interpolation, This will work one time, but the value will not change forever -->
+        <input [disabled]="myStatus" type='text' />         <!-- Property binding using [] on the attribute "disabled" -->
+        <input bind-disabled="myStatus" type='text' />      <!-- Property binding using "bind-" on the attribute "disabled"-->
     </div>
 `,
 styles: [`h1 { color:red }`]
@@ -92,12 +92,14 @@ export class NameComponent implements OnInit {
 selector: 'app-test',
 template: `
     <div>
-        <h1 [class]="text-blue">This is Blue</h1>
-        <h1 [class.text-blue]="myStatus">This is Blue</h1>
-        <h1 [ngClass]="myClasses">This text is with multiple classes</h1>
+        <h1 class="text-red" [class]="footerClass" class="text-red">This is Blue</h1>   <!-- This is blue because ordinary class are overwrite by Class binding -->
+        <h1 [class]="footerClass">This is Blue</h1>                                     <!-- Class binding -->
+        <h1 [class.text-blue]="myStatus">This is Blue</h1>                              <!-- alternative formatting of Class binding -->
+        <h1 [ngClass]="myClasses">This text is with multiple classes</h1>               <!-- Multiple classes in a Class binding -->
     </div>
 `,
 styles: [`
+    .text-red {color:red;}
     .text-blue {color:blue;}
     .text-uppercase {text-transform: uppercase;}
     .text-italic {font-style: italic;}
@@ -105,6 +107,7 @@ styles: [`
 });
 export class NameComponent implements OnInit {
      public title_name = "App Test";
+     public footerClass = "text-blue";
      public myStatus = true;
      public myClasses = {
         "text-blue": this.myStatus,
