@@ -27,11 +27,11 @@ template: `
         <h1>Testing title</h1>
     </div>
 `,
-style: `
+styles: [`
     h1 {
         color:red
     }
-`
+`]
 })
 
 Use backticks (`) to allow multiple lines in style and template.
