@@ -72,6 +72,7 @@ template: `
         <h1>{{ title_name }}</h1>
         <input [id]="myId" type='text' /> <!-- Property binding, it works with numbers, booleans(true/false), changing values -->
         <input id="{{ myId }}" type='text' /> <!-- Interpolation, only works with string values and it's not changing if already have a value -->
+        <input disabled="{{ myStatus }}" type='text' /> <!-- Interpolation, This will work one time, but the value will not change forever -->
         <input [disabled]="myStatus" type='text' /> <!-- Property binding using [] on the attribute "disabled" -->
         <input bind-disabled="myStatus" type='text' /> <!-- Property binding using "bind-" on the attribute "disabled"-->
     </div>
