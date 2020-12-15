@@ -60,7 +60,9 @@ export class NameComponent implements OnInit {
 ```
 ### Property Binding
 Used for dynamic values or changing values it works with strings, numbers, booleans(true/false), and changing values unlike intepolation "{{}}" only works with string values.
+
 Attribute - HTML
+
 Property - (DOM)
 ```
 @Component({
