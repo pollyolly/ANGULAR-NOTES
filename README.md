@@ -33,5 +33,7 @@ style: `
     }
 `
 })
+
+Use backticks (`) to allow multiple lines in style and template.
 ```
 #### Component
