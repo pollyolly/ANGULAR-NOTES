@@ -37,7 +37,7 @@ styles: [`
 Use backticks (`) to allow multiple lines in style and template.
 ```
 #### Interpolation
-Interpolation is the "{{  }}" (double curly brace) that evaluate it and display the value in the browser.
+Interpolation is the "{{  }}" (double curly brace) that evaluate the value in it and display the value in the browser.
 ```
 @Component({
 selector: 'app-test',
