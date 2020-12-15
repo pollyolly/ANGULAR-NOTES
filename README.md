@@ -57,3 +57,6 @@ export class NameComponent implements OnInit {
      constructor(){}
 }
 ```
+### Property Binding
+Attribute - HTML
+Property - (DOM)
