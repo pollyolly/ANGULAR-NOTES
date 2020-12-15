@@ -1,8 +1,9 @@
 #### References
+```
 https://www.youtube.com/watch?v=Y6OP-lPJxgs&list=PLC3y8-rFHvwhBRAgFinJR8KHIrCdTkZcZ&index=7
 https://stackblitz.com/angular/kkaakmpqgjm?file=src%2Fapp%2Fhero.service.ts
 https://angular.io/guide/example-apps-list
-
+```
 #### Component
 Component Selector have 3 way format.
 ```
