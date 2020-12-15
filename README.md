@@ -1,5 +1,5 @@
 #### Angular-Notes
-Component Selector can have multiple format.
+Component Selector have 3 ways format.
 ```
 selector: '[app-test]'
 <div app-test>
