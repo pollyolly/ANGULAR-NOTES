@@ -36,4 +36,24 @@ styles: [`
 
 Use backticks (`) to allow multiple lines in style and template.
 ```
-#### Component
+#### Interpolation
+Interpolation is the "{{  }}" (double curly brace) that evaluate it and display the value in the browser.
+```
+@Component({
+selector: 'app-test',
+template: `
+    <div>
+        <h1>{{ title_name }}</h1>
+    </div>
+`,
+styles: [`
+    h1 {
+        color:red
+    }
+`]
+});
+export class NameComponent implements OnInit {
+     public title_name = "App Test";
+     constructor(){}
+}
+```
