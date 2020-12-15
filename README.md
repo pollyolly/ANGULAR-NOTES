@@ -86,3 +86,31 @@ export class NameComponent implements OnInit {
      constructor(){}
 }
 ```
+### Class Binding
+```
+@Component({
+selector: 'app-test',
+template: `
+    <div>
+        <h1 [class]="text-blue">This is Blue</h1>
+        <h1 [class.text-blue]="myStatus">This is Blue</h1>
+        <h1 [ngClass]="myClasses">This text is with multiple classes</h1>
+    </div>
+`,
+styles: [`
+    .text-blue {color:blue;}
+    .text-uppercase {text-transform: uppercase;}
+    .text-italic {font-style: italic;}
+  `]
+});
+export class NameComponent implements OnInit {
+     public title_name = "App Test";
+     public myStatus = true;
+     public myClasses = {
+        "text-blue": this.myStatus,
+        "text-uppercase": !this.myStatus, //no effect since false
+        "text-italic": this.myStatus
+     }
+     constructor(){}
+}
+```
