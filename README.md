@@ -58,7 +58,7 @@ export class NameComponent implements OnInit {
      constructor(){}
 }
 ```
-### Property Binding
+#### Property Binding
 Used for dynamic values or changing values it works with strings, numbers, booleans(true/false), and changing values unlike interpolation "{{}}" only works with string values.
 
 Attribute - HTML
@@ -86,7 +86,7 @@ export class NameComponent implements OnInit {
      constructor(){}
 }
 ```
-### Class Binding
+#### Class Binding
 ```
 @Component({
 selector: 'app-test',
