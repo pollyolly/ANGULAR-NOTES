@@ -1,5 +1,5 @@
 #### Component
-Component Selector have 3 ways format.
+Component Selector have 3 way format.
 ```
 @Component({
 selector: 'app-test',
