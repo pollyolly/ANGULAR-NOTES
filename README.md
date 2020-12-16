@@ -226,7 +226,7 @@ export class NameComponent implements OnInit {
 }
 ```
 #### ngIf Directive
-ngIf is used to conditionally control the HTML.
+ngIf is used to conditionally render the HTML.
 ng-template is used as container for the HTML.
 ```
 @Component({
