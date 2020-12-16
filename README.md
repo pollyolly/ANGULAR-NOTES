@@ -177,3 +177,30 @@ export class NameComponent implements OnInit {
      }
 }
 ```
+#### Template reference variable
+Use # with variable (#variable) to access the DOM and HTML.
+```
+@Component({
+selector: 'app-test',
+template: `
+    <div>
+        <input #myInput type="text" />                           <!-- #myInput will access DOM and HTML -->
+        <input type="button" (click)="setValue(myInput.value)">  <!-- myInput.value to get the value from #myInput -->
+        <input type="button" (click)="setValue(myInput)">        <!-- if .value is not added this will return the HTML "<input #myInput type="text" />" instead-->
+        {{ theValue }}
+    </div>
+`,
+styles: [`
+
+  `]
+});
+export class NameComponent implements OnInit {
+     public title_name = "App Test";
+     public theValue = "";
+     
+     constructor(){}
+     setValue(event){
+        this.theValue = "Im the value!";
+     }
+}
+```
