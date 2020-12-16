@@ -150,3 +150,29 @@ export class NameComponent implements OnInit {
      constructor(){}
 }
 ```
+#### Event Binding
+$event - give information about the DOM event that was occured.
+```
+@Component({
+selector: 'app-test',
+template: `
+    <div>
+        <input type="button" (click)="getClick($event)" />
+        {{ iSay }}
+    </div>
+`,
+styles: [`
+
+  `]
+});
+export class NameComponent implements OnInit {
+     public title_name = "App Test";
+     public iSay = "";
+     
+     constructor(){}
+     getClick(event){
+        console.log(event);
+        this.iSay = "Hello world";
+     }
+}
+```
