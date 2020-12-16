@@ -129,9 +129,10 @@ export class NameComponent implements OnInit {
 selector: 'app-test',
 template: `
     <div>
+        <h1 [style.color]="myStatus ? 'green' : 'red'">This is Blue</h1>                <!-- Conditional style binding -->
         <h1 [style.color]="myColor">This is Blue</h1>                                   <!-- String value of variable myColor="blue" -->
-        <h1 [style.color]="orange">This is Blue</h1>                                     <!-- string value directly -->
-        <h1 [ngStyle]="titleStyle">This text is with multiple style</h1>               <!-- Multiple style in a Style binding -->
+        <h1 [style.color]="orange">This is Blue</h1>                                    <!-- string value directly -->
+        <h1 [ngStyle]="titleStyle">This text is with multiple style</h1>                <!-- Multiple style in a Style binding -->
     </div>
 `,
 styles: [`
