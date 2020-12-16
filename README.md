@@ -204,3 +204,24 @@ export class NameComponent implements OnInit {
      }
 }
 ```
+#### Two Way Binding
+Allow to update and display the value of the property.
+Needs to import Form module in angular to work.
+```
+@Component({
+selector: 'app-test',
+template: `
+    <div>
+        <input [(ngModel)]="theValue" type="text" />     <!-- This will update the template -->
+        {{ theValue }}                                   
+    </div>
+`,
+styles: [`
+
+  `]
+});
+export class NameComponent implements OnInit {
+     public theValue = "";
+     constructor(){}
+}
+```
