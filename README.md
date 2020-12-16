@@ -225,3 +225,34 @@ export class NameComponent implements OnInit {
      constructor(){}
 }
 ```
+#### ngIf Directive
+ngIf is used to conditionally control the HTML.
+ng-template is used as container for the HTML.
+```
+@Component({
+selector: 'app-test',
+template: `
+    <h2 *ngIf="myStatus; then variableThen; else variableElse">
+        This is the default value.
+    </h2>
+    <ng-template #variableThen> 
+        <p>
+            This will be showed when true!
+        </p>
+    </ng-template>
+    
+    <ng-template #variableElse>
+        <p>
+            This will be showed when false!
+        </p>
+    </ng-template>
+`,
+styles: [`
+
+  `]
+});
+export class NameComponent implements OnInit {
+     public myStatus = true;
+     constructor(){}
+}
+```
