@@ -178,7 +178,7 @@ export class NameComponent implements OnInit {
 }
 ```
 #### Template reference variable
-Use # with variable (#variable) to access the DOM and HTML.
+#myInput is a template reference variable used to get the HTML and DOM property.
 ```
 @Component({
 selector: 'app-test',
