@@ -256,7 +256,7 @@ export class NameComponent implements OnInit {
      constructor(){}
 }
 ```
-#### ngIf Switch
+#### ngSwitch Directive 
 ```
 @Component({
 selector: 'app-test',
@@ -274,6 +274,27 @@ styles: [`
 });
 export class NameComponent implements OnInit {
      public color = "blue";
+     constructor(){}
+}
+```
+#### ngFor Directive
+```
+@Component({
+selector: 'app-test',
+template: `
+    <div [ngFor]="let color of theColors">
+           {{color}}
+    </div>
+    <div [ngFor]="let color of theColors;index as i">
+           {{i}}  {{color}}
+    </div>
+`,
+styles: [`
+
+  `]
+});
+export class NameComponent implements OnInit {
+     public theColors = ["blue","red","green"];
      constructor(){}
 }
 ```
