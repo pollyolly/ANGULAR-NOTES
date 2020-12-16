@@ -256,3 +256,24 @@ export class NameComponent implements OnInit {
      constructor(){}
 }
 ```
+#### ngIf Switch
+```
+@Component({
+selector: 'app-test',
+template: `
+    <div [ngSwitch]="color">
+        <div *ngSwitchCase="'blue'">Picked blue color</div>
+        <div *ngSwitchCase="'red'">Picked red color</div>
+        <div *ngSwitchCase="'green'">Picked green color</div>
+        <div *ngSwitchDefault> Think another color! </div>
+    </div>
+`,
+styles: [`
+
+  `]
+});
+export class NameComponent implements OnInit {
+     public color = "blue";
+     constructor(){}
+}
+```
