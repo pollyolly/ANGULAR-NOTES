@@ -157,7 +157,8 @@ $event - give information about the DOM event that was occured.
 selector: 'app-test',
 template: `
     <div>
-        <input type="button" (click)="getClick($event)" />
+        <input type="button" (click)="getClick($event)" />         <!-- $event gives information about the DOM event -->
+        <input type="button" (click)="iSay='This is my world!'" /> <!-- Directly initialize in HTML the value in a variable -->
         {{ iSay }}
     </div>
 `,
