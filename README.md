@@ -288,6 +288,18 @@ template: `
     <div [ngFor]="let color of theColors;index as i">
            {{i}}  {{color}}
     </div>
+    <div [ngFor]="let color of theColors;first as i">
+           {{i}}  {{color}} <!-- This will be true if the first index and false if not -->
+    </div>
+    <div [ngFor]="let color of theColors;last as i">
+           {{i}}  {{color}} <!-- This will be true if the last index and false if not -->
+    </div>
+    <div [ngFor]="let color of theColors;even as i">
+           {{i}}  {{color}} <!-- This will be true if even index and false if not -->
+    </div>
+    <div [ngFor]="let color of theColors;odd as i">
+           {{i}}  {{color}}  <!-- This will be true if odd index and false if not -->
+    </div>
 `,
 styles: [`
 
