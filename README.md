@@ -310,3 +310,48 @@ export class NameComponent implements OnInit {
      constructor(){}
 }
 ```
+#### Component 
+Communicate from Parent To Child Component
+Parent to Child Component to Child Component is not possible.
+```
+//Parent Component
+@Component({
+selector: 'app-test',
+template: `
+    {{ myMessage }}
+    <app-test-two (childEvent)="myMessage=$event" [parentData]="name"></app-test-two>
+`,
+styles: [`
+
+  `]
+});
+export class NameComponent implements OnInit {
+    public name = "Who I am?";
+    public myMessage = "";
+     constructor(){}
+}
+
+//Child Component
+@Component({
+selector: 'app-test-two',
+template: `
+    <h2>{{ parentData }}</h2>
+    <h2>{{ parentDataTwo }}</h2>
+    <button (click)="fireEvent()">Send Message</button>
+`,
+styles: [`
+
+  `]
+});
+export class NameComponent implements OnInit {
+    @Input() public parentData;                         //receiving the parentData from Parent Component [parentData]="name"
+    @Input('parentData') public parentDataTwo;          //aliasing the parentData
+    @Output() public childEvent = new EventEmitter();   //only way to send data from Child Component to Parent Component using event
+     constructor(){}
+     
+     fireEvent(){
+        this.childEvent.emit('Hello Parent I'm here from child component!!'):
+     }
+}
+```
+
