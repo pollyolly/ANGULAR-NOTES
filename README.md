@@ -362,23 +362,23 @@ template: `
     <p>{{ name | uppercase }}</p>
     <p>{{ nametwo | lowercase }}</p>
     <p>{{ name | titlecase }}</p>
-    <p>{{ name | slice:3:5 }}</p>         <!-- starting from 0 cut from position 3 to 4 the result is "an" -->
-    <p>{{ myJson | json }}</p>            <!-- {"firstname": "Dianna","lastname": "Zubiri"} -->
+    <p>{{ name | slice:3:5 }}</p>                   <!-- starting from 0 cut from position 3 to 4 the result is "an" -->
+    <p>{{ myJson | json }}</p>                      <!-- {"firstname": "Dianna","lastname": "Zubiri"} -->
     
-    <p>{{ number | number:'1.2-3' }}</p> <!-- 5.679 --> <!-- 1 integer value dot minimum 2 decimal and maximum 3 decimal value -->
-    <p>{{ number | number:'3.4-5' }}</p> <!-- 005.67900  -->
-    <p>{{ number | number:'3.1-2' }}</p> <!-- 5.67 -->
+    <p>{{ number | number:'1.2-3' }}</p>            <!-- 5.679 --> <!-- 1 integer value dot minimum 2 decimal and maximum 3 decimal value -->
+    <p>{{ number | number:'3.4-5' }}</p>            <!-- 005.67900  -->
+    <p>{{ number | number:'3.1-2' }}</p>            <!-- 5.67 -->
     
-    <p>{{ 0.25 | percent }}</p> <!-- 25% -->
+    <p>{{ 0.25 | percent }}</p>                     <!-- 25% -->
     
-    <p>{{ 0.25 | currencey }}</p> <!-- default $ dollar -->
-    <p>{{ 0.25 | currencey:'PHP' }}</p> <!-- P0.25 -->
-    <p>{{ 0.25 | currencey:'EUR':'code' }}</p> <!-- EUR0.25 -->
+    <p>{{ 0.25 | currencey }}</p>                   <!-- default $ dollar -->
+    <p>{{ 0.25 | currencey:'PHP' }}</p>             <!-- P0.25 -->
+    <p>{{ 0.25 | currencey:'EUR':'code' }}</p>      <!-- EUR0.25 -->
     
     <p>{{ date }}</p> <!--  -->
-    <p>{{ date | date:'short' }}</p> <!-- 12/3/17 9:49 PM -->
-    <p>{{ date | date:'shortDate' }}</p> <!-- 12/3/17 -->
-    <p>{{ date | date:'shortTime' }}</p> <!-- 9:49 PM -->
+    <p>{{ date | date:'short' }}</p>                <!-- 12/3/17 9:49 PM -->
+    <p>{{ date | date:'shortDate' }}</p>            <!-- 12/3/17 -->
+    <p>{{ date | date:'shortTime' }}</p>            <!-- 9:49 PM -->
 `,
 styles: [`
 
