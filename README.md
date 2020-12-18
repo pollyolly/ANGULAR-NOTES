@@ -396,5 +396,46 @@ export class NameComponent implements OnInit {
 }
 ```
 #### Service
+AppModule Level Injection of Dependency the service to make it accessable in other components
+Add 
 ```
+//App Module
+import { EmployeeService } from '../employee.service' //Import the service in app.module to make it accessible accross the app
+...
+providers:[
+EmployeeService
+]
+...
+// Component
+
+@Component({  // Component already have the logic of injectable decoration
+selector: 'app-test',
+template: `
+    <div *ngFor="let emp of employee">
+        {{ emp.name }} {{ emp.age }}
+    </div> 
+`,
+styles: [`
+
+  `]
+});
+export class NameComponent implements OnInit {
+     public employee = []
+     constructor(private employeeSrv: EmployeeService){}
+     ngOnInit(){
+        this.employee = this.employeeSrv.getEmployee();
+     }
+}
+// Service
+@Injectable() // Injectable decorator is required inside service to make it injectable to other component
+export class EmployeeService {
+    getEmployee(){
+        return [
+            {"id":1, "name":"John", "age":23},
+            {"id":2, "name":"May", "age":27},
+            {"id":3, "name":"Kite", "age":21}
+        ]    
+    }
+    constructor(){}
+}
 ```
