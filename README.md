@@ -418,7 +418,7 @@ styles: [`
   `]
 });
 export class NameComponent implements OnInit {
-     public employee = []
+     public employee = [];
      constructor(private employeeSrv: EmployeeService){}
      ngOnInit(){
         this.employee = this.employeeSrv.getEmployee();
@@ -436,4 +436,47 @@ export class EmployeeService {
     }
     constructor(){}
 }
+```
+#### Fetch Data using HTTP
+```
+//Component
+@Component({ 
+selector: 'app-test',
+template: `
+    <div *ngFor="let emp of employee">
+        {{ emp.name }} {{ emp.age }}
+    </div> 
+`,
+styles: [`
+
+  `]
+});
+export class NameComponent implements OnInit {
+     public employee = [];
+     constructor(private employeeSrv: EmployeeService){}
+     ngOnInit(){
+        this.employee = this.employeeSrv.getEmployee().subscribe(data=> this.employee = data);
+     }
+}
+//Service
+@Injectable()
+export class EmployeeService {
+    private url: string = "/asset/data/employee.json";
+    constructor(private http: HttpClient){}
+    getEmployee():Observable<IEmployee> {
+        return this.http.get<IEmployee[]>(this.url);
+    }
+
+}
+//Interface
+export interface IEmployee {
+    id: number,
+    name: string,
+    age: number
+}
+//Data
+employee.json
+ [{"id":1, "name":"John", "age":23},
+ {"id":2, "name":"May", "age":27},
+ {"id":3, "name":"Kite", "age":21}]
 ```
