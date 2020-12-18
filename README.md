@@ -397,7 +397,6 @@ export class NameComponent implements OnInit {
 ```
 #### Service
 AppModule Level Injection of Dependency the service to make it accessable in other components
-Add 
 ```
 //App Module
 import { EmployeeService } from '../employee.service' //Import the service in app.module to make it accessible accross the app
