@@ -406,7 +406,6 @@ EmployeeService
 ]
 ...
 // Component
-
 @Component({  // Component already have the logic of injectable decoration
 selector: 'app-test',
 template: `
