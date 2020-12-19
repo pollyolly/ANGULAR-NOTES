@@ -585,11 +585,4 @@ exports: [RouterModule]]
 })
 export class AppRoutingModule{}
 export const routingComponents = [DepartmentComponent, EmployeeComponent, NotFoundComponent]; //Create an array of components to import theme using one Array.
-
-//App Component
-<router-outlet></router-outlet> <!-- Here the routing view will appear -->
-<nav>
-    <a routerLink="/pathToDepartment" routerLinkActive="active">Department</a> <!-- using routeLinkActive will apply the value as a class ".active" when active-->
-    <a routerLink="/pathToEmployee" >Employee</a>
-</nav>
 ```
