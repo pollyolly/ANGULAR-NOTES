@@ -563,7 +563,7 @@ export const routingComponents = [DepartmentComponent, EmployeeComponent]; //Cre
 //App Component
 <router-outlet></router-outlet> <!-- Here the routing view will appear -->
 <nav>
-    <a router-link="/pathTodepartment" routerLinkActive="active">Department</a> <!-- using routeLinkActive will apply the value as a class ".active" when active-->
-    <a router-link="/pathTodepartment" >Employee</a>
+    <a routerLink="/pathTodepartment" routerLinkActive="active">Department</a> <!-- using routeLinkActive will apply the value as a class ".active" when active-->
+    <a routerLink="/pathTodepartment" >Employee</a>
 </nav>
 ```
