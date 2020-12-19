@@ -532,3 +532,38 @@ employee.json
  {"id":2, "name":"May", "age":27},
  {"id":3, "name":"Kite", "age":21}]
 ```
+#### Routing and Navigation
+```
+//Index
+<base href="/"> <!-- Declare a forward slash for the base route -->
+//App Module
+import { AppRoutingModule, routingCompnents } from './app-routing.module'; //Create an array of components to import theme using one Array.
+...
+declarations: [
+    routingCompnents
+],
+import: [
+    AppRoutingModule,
+]
+...
+//Routing Module
+... import components etc.
+import { Routes, RouterModule } from '@angular/router';
+
+const routes: Routes = [{
+    path:"pathTodepartment" ,component: DepartmentComponent,
+    path:"pathTodepartment" ,component: EmployeeComponent
+}]
+@NgModule({
+imports: [RouterModule.forRoot(routes),
+exports: [RouterModule]]
+})
+export class AppRoutingModule{}
+export const routingComponents = [DepartmentComponent, EmployeeComponent]; //Create an array of components to import theme using one Array.
+//App Component
+<router-outlet></router-outlet> <!-- Here the routing view will appear -->
+<nav>
+    <a router-link="/pathTodepartment" routerLinkActive="active">Department</a> <!-- using routeLinkActive will apply the value as a class ".active" when active-->
+    <a router-link="/pathTodepartment" >Employee</a>
+</nav>
+```
