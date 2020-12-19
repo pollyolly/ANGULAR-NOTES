@@ -567,3 +567,29 @@ export const routingComponents = [DepartmentComponent, EmployeeComponent]; //Cre
     <a routerLink="/pathTodepartment" >Employee</a>
 </nav>
 ```
+#### Wildcard Route and Redirecting Routes
+```
+//Routing Module
+... import components etc.
+import { Routes, RouterModule } from '@angular/router';
+
+const routes: Routes = [
+    {   path:"" ,redirectTo: "/pathToDepartment", pathMatch: "full" }, //Redirect to department when url is not match
+    {   path:"pathToDepartment" ,component: DepartmentComponent },
+    {   path:"pathToEmployee" ,component: EmployeeComponent },
+    {   path:"**" ,component: NotFoundComponent } //Redirect to not found page when url is not found using wildcard **
+}]
+@NgModule({
+imports: [RouterModule.forRoot(routes),
+exports: [RouterModule]]
+})
+export class AppRoutingModule{}
+export const routingComponents = [DepartmentComponent, EmployeeComponent, NotFoundComponent]; //Create an array of components to import theme using one Array.
+
+//App Component
+<router-outlet></router-outlet> <!-- Here the routing view will appear -->
+<nav>
+    <a routerLink="/pathToDepartment" routerLinkActive="active">Department</a> <!-- using routeLinkActive will apply the value as a class ".active" when active-->
+    <a routerLink="/pathToEmployee" >Employee</a>
+</nav>
+```
