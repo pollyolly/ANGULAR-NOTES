@@ -626,10 +626,10 @@ styles: [`
   `]
 });
 export class DepartmentDetailComponent implements OnInit{
-    public departmentId
+    public departmentId;
     constructor(private route: ActivatedRoute){}
     ngOnInit(){
-        let id = parseInt(this.route.snapshot.paramMap.get(id));
+        let id = parseInt(this.route.snapshot.paramMap.get('id'));
         this.departmentId = id;
     }
 }
