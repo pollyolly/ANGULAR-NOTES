@@ -480,3 +480,55 @@ employee.json
  {"id":2, "name":"May", "age":27},
  {"id":3, "name":"Kite", "age":21}]
 ```
+#### HTTP Error Handling
+```
+//Component
+@Component({ 
+selector: 'app-test',
+template: `
+    <div *ngFor="let emp of employee">
+        {{ emp.name }} {{ emp.age }}
+    </div> 
+    {{ msgError }} 
+`,
+styles: [`
+
+  `]
+});
+export class NameComponent implements OnInit {
+     public employee = [];
+     public msgError;
+     constructor(private employeeSrv: EmployeeService){}
+     ngOnInit(){
+        this.employee = this.employeeSrv.getEmployee().subscribe(data=> this.employee = data,
+                                                                 error => this.msgError = error);
+                   
+     }
+}
+//Service
+@Injectable()
+export class EmployeeService {
+    private url: string = "/asset/data/employee.json";
+    constructor(private http: HttpClient){}
+    
+    getEmployee():Observable<IEmployee> {
+        return this.http.get<IEmployee[]>(this.url)
+                            .catch(this.errorHandler);
+    }
+    errorHandler(error: HttpErrorResponse){
+        return Observable.throw(error.message || "Server Error");
+    }
+
+}
+//Interface
+export interface IEmployee {
+    id: number,
+    name: string,
+    age: number
+}
+//Data
+employee.json
+ [{"id":1, "name":"John", "age":23},
+ {"id":2, "name":"May", "age":27},
+ {"id":3, "name":"Kite", "age":21}]
+```
