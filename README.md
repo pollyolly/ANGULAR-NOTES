@@ -586,3 +586,68 @@ exports: [RouterModule]]
 export class AppRoutingModule{}
 export const routingComponents = [DepartmentComponent, EmployeeComponent, NotFoundComponent]; //Create an array of components to import theme using one Array.
 ```
+#### Route Parameters
+```
+//Component Department
+@Component({ 
+selector: 'app-test',
+template: `
+    <nav (click)="onSelect(department)" *ngFor="let deparment of departments">
+        {{ deparment.id }}{{ deparment.name }}
+    </nav> 
+    {{ msgError }} 
+`,
+styles: [`
+
+  `]
+});
+export class DepartmentComponent implements OnInit{
+    departments = [
+        {"id":1, "name":"Andi"},
+        {"id":2, "name":"Jonathan"},
+        {"id":3, "name":"Miguel"}
+    ]
+    constructor(private router: Router){}
+    ngOnInit(){
+    }
+    onSelect(department){
+        this.router.navigate(['/pathToDepartment', department.id]);
+    }
+}
+//Component Department Detail
+import { ActivatedRoute } from ''
+@Component({ 
+selector: 'app-test',
+template: `
+    <h2>Department ID: {{ departmentId }}</h2>
+`,
+styles: [`
+
+  `]
+});
+export class DepartmentDetailComponent implements OnInit{
+    public departmentId
+    constructor(private route: ActivatedRoute){}
+    ngOnInit(){
+        let id = parseInt(this.route.snapshot.paramMap.get(id));
+        this.departmentId = id;
+    }
+}
+//Routing Module
+... import components etc.
+import { Routes, RouterModule } from '@angular/router';
+
+const routes: Routes = [
+    {   path:"" ,redirectTo: "/pathToDepartment", pathMatch: "full" },
+    {   path:"pathToDepartment/:id" ,component: DepartmentComponent }, //Added /:id parameter to add id's in the Path/URL
+    {   path:"pathToEmployee" ,component: EmployeeComponent },
+    {   path:"**" ,component: NotFoundComponent }
+}]
+@NgModule({
+imports: [RouterModule.forRoot(routes),
+exports: [RouterModule]]
+})
+export class AppRoutingModule{}
+export const routingComponents = [DepartmentComponent, EmployeeComponent, NotFoundComponent, DepartmentDetailComponent]; 
+
+```
