@@ -651,3 +651,7 @@ export class AppRoutingModule{}
 export const routingComponents = [DepartmentComponent, EmployeeComponent, NotFoundComponent, DepartmentDetailComponent]; 
 
 ```
+#### paramMap Observable
+```
+
+```
