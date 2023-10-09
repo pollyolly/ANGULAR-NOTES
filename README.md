@@ -1,12 +1,12 @@
 #### References
-```
+```vim
 https://www.youtube.com/watch?v=Y6OP-lPJxgs&list=PLC3y8-rFHvwhBRAgFinJR8KHIrCdTkZcZ&index=7
 https://stackblitz.com/angular/kkaakmpqgjm?file=src%2Fapp%2Fhero.service.ts
 https://angular.io/guide/example-apps-list
 ```
 #### Component
 Component Selector have 3 way format.
-```
+```js
 @Component({
 selector: 'app-test',
 templateUrl: './app.component.html',
@@ -25,7 +25,7 @@ selector: 'app-test'
 <app-test></app-test>
 ```
 Component styling and templating have also different way to add.
-```
+```js
 @Component({
 selector: 'app-test',
 template: `
@@ -45,7 +45,7 @@ Use backticks (`) to allow multiple lines in style and template.
 #### Interpolation
 Interpolation is the "{{  }}" (double curly brace) that evaluate the value in it and display the value in the browser.
 *Note it will only work in string values.
-```
+```js
 @Component({
 selector: 'app-test',
 template: `
@@ -70,7 +70,7 @@ Used for dynamic values or changing values it works with strings, numbers, boole
 Attribute - HTML
 
 Property - (DOM)
-```
+```js
 @Component({
 selector: 'app-test',
 template: `
@@ -93,7 +93,7 @@ export class NameComponent implements OnInit {
 }
 ```
 #### Class Binding
-```
+```js
 @Component({
 selector: 'app-test',
 template: `
@@ -124,7 +124,7 @@ export class NameComponent implements OnInit {
 }
 ```
 #### Style Binding
-```
+```js
 @Component({
 selector: 'app-test',
 template: `
@@ -152,7 +152,7 @@ export class NameComponent implements OnInit {
 ```
 #### Event Binding
 $event - give information about the DOM event that was occured.
-```
+```js
 @Component({
 selector: 'app-test',
 template: `
@@ -179,7 +179,7 @@ export class NameComponent implements OnInit {
 ```
 #### Template reference variable
 #myInput is a template reference variable used to get the HTML and DOM property.
-```
+```js
 @Component({
 selector: 'app-test',
 template: `
@@ -207,7 +207,7 @@ export class NameComponent implements OnInit {
 #### Two Way Binding
 Allow to update and display the value of the property.
 Needs to import Form module in angular to work.
-```
+```js
 @Component({
 selector: 'app-test',
 template: `
@@ -228,7 +228,7 @@ export class NameComponent implements OnInit {
 #### ngIf Directive
 ngIf is used to conditionally render the HTML.
 ng-template is used as container for the HTML.
-```
+```js
 @Component({
 selector: 'app-test',
 template: `
@@ -257,7 +257,7 @@ export class NameComponent implements OnInit {
 }
 ```
 #### ngSwitch Directive 
-```
+```js
 @Component({
 selector: 'app-test',
 template: `
@@ -278,7 +278,7 @@ export class NameComponent implements OnInit {
 }
 ```
 #### ngFor Directive
-```
+```js
 @Component({
 selector: 'app-test',
 template: `
@@ -313,7 +313,7 @@ export class NameComponent implements OnInit {
 #### Component 
 Communicate from Parent To Child Component
 Parent to Child Component to Child Component is not possible.
-```
+```js
 //Parent Component
 @Component({
 selector: 'app-test',
@@ -355,7 +355,7 @@ export class NameComponent implements OnInit {
 }
 ```
 #### Pipe
-```
+```js
 @Component({
 selector: 'app-test',
 template: `
@@ -397,7 +397,7 @@ export class NameComponent implements OnInit {
 ```
 #### Service
 AppModule Level Injection of Dependency the service to make it accessable in other components
-```
+```js
 //App Module
 import { EmployeeService } from '../employee.service' //Import the service in app.module to make it accessible accross the app
 ...
@@ -438,7 +438,7 @@ export class EmployeeService {
 }
 ```
 #### Fetch Data using HTTP
-```
+```js
 //Component
 @Component({ 
 selector: 'app-test',
@@ -481,7 +481,7 @@ employee.json
  {"id":3, "name":"Kite", "age":21}]
 ```
 #### HTTP Error Handling
-```
+```js
 //Component
 @Component({ 
 selector: 'app-test',
@@ -533,7 +533,7 @@ employee.json
  {"id":3, "name":"Kite", "age":21}]
 ```
 #### Routing and Navigation
-```
+```js
 //Index
 <base href="/"> <!-- Declare a forward slash for the base route -->
 //App Module
@@ -568,7 +568,7 @@ export const routingComponents = [DepartmentComponent, EmployeeComponent]; //Cre
 </nav>
 ```
 #### Wildcard Route and Redirecting Routes
-```
+```js
 //Routing Module
 ... import components etc.
 import { Routes, RouterModule } from '@angular/router';
@@ -587,7 +587,7 @@ export class AppRoutingModule{}
 export const routingComponents = [DepartmentComponent, EmployeeComponent, NotFoundComponent]; //Create an array of components to import theme using one Array.
 ```
 #### Route Parameters
-```
+```js
 //Component Department
 @Component({ 
 selector: 'app-test',
